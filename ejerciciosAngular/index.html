@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ejemplo angular</title>
+	
+
+</head>
+<body ng-app="miApp">
+	<strong>{{5+3}}</strong>
+	<input type="text" ng-model="nombre">
+	Nombre: {{nombre}}
+
+	<div ng-bind="nombre"></div>
+
+	<div ng-controller="controladorApp">
+		{{valorScope}}
+
+	</div>
+		
+</body>
+<script src="angular.min.js"></script>
+<script src="app.js"></script>
+</html>

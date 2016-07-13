@@ -1,0 +1,12 @@
+.rojo {
+  color: red;
+}
+.subrayado {
+  text-decoration: line-through;
+}
+.negrita {
+  font-weight: bold;
+}
+.menu-disabled-true {
+color: gray;
+}

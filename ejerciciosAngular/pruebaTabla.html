@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>pruebaTabla</title>
+	<link rel="stylesheet" href="tabla.css">
+	<script src="angular.min.js"></script>
+</head>
+	<body ng-app="">
+		<form name="formT">
+			 INPUT required: <input type="text" name="txtNombre" ng-model="varAngularNombre" required>
+			<span class="msgError" ng-show="formT.txtNombre.$error.required">(*)</span>
+			<br>
+			 INPUT required: <input type="email" name="txtemail" ng-model="varAngularEmail" required>
+			<span class="msgError" ng-show="formT.txtemail.$error.email">cambiar formato </span>
+		</form>
+		<div ng-init="existeError=false"></div>
+		<div ng-init="mensaje='esto es un mensaje'"></div>
+		<div ng-show="existeError" class="msgError">{{mensaje}}</div>
+		<div ng-hide="existeError" class="msgExito">{{mensaje}}</div>
+		<div ng-init="libros=['Harry Potter','Dela tierra a la luna']">
+			<table>
+				<thead>
+					<tr>
+						<th>Libros</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="l in libros" >
+						<td ng-bind="l"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+
+</html>

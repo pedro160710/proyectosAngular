@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<title>ejemploEstilosDinamicos</title>
+		<link rel="stylesheet" href="estilo.css">
+	</head>
+		{{5+6}}
+	<body  ng-app="aplicacion"   ng-controller="appCtrl">
+		<input ng-model="clasesCss.rojo" type="checkbox"> aplicar estilo rojo
+		<input ng-model="clasesCss.subrayado" type="checkbox"> aplicar estilo subrayado
+		<input ng-model="clasesCss.negrita" type="checkbox">aplicar estilo negrita
+		
+		<div ng-class="clasesCss">Este es un texto con clases dinámicas</div>
+
+
+		<br>
+		<ul>
+			<li class="menu-disabled-{{isDisabled}}" ng-click="desactivar()">Desactivar</li>
+		</ul>
+		<!-- scripts -->
+				
+		<script src="angular.min.js"></script>
+		<script src="app.js"></script>
+	</body>
+
+</html>

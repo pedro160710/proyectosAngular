@@ -1,0 +1,9 @@
+table{
+	border: 1px solid;
+}
+.msgError{
+	color: red;
+}
+.msgExito{
+	color:green;
+}

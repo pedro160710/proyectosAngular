@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ingreso de libro</title>
+</head>
+	<body ng-app="" >
+		<!-- funcionalidad -->
+		{{5+1}}
+		<form method="post" name="formLibro" action=".......">
+			<div>
+				Id:<input type="number" name="idLibro" ng-model="varIdLibro" required>
+				<span  ng-show="formLibro.idLibro.$error.required">id requerido</span>
+			</div>
+			<div>
+				Titulo:<input type="text" name="tituloLibro" ng-model="varTituloLibro" ng-maxlength="5" required>
+				<span  ng-show="formLibro.tituloLibro.$error.required">titulo requerido</span>
+			</div>
+			<div>
+				Autor :<input type="text" name="autorLibro" ng-model="varAutorLibro" required>
+				<span  ng-show="formLibro.autorLibro.$error.required">autor requerido</span>
+			</div>
+			<div>			
+				Stock :<input type="number" name="stockLibro" ng-model="varStockLibro"  max="1000" min="0" required>
+				<span  ng-show="formLibro.stockLibro.$error.required">(*)</span>
+				<span  ng-show="formLibro.stockLibro.$invalid">rango no permitido </span>
+			</div>
+		</form>
+		<!-- scripts -->
+		<script src="angular.min.js"></script>
+	</body>
+</html>

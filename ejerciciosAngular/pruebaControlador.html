@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>pruebaControlador</title>
+		<link rel="stylesheet" type="text/css" href="estilosInputs.css">
+		<script src="angular.min.js"></script>
+		<script src="app.js"></script>
+	</head >
+	<body ng-app="miApp" ng-controller="controladorApp" >
+	{{nombrePersona}}
+		<input type="text" name="input" ng-model="nombrePersona">
+		<button value="Saludar" ng-click="saludar()"> saludar</button>
+	{{saludo}}
+
+	</body>
+	
+</html>
