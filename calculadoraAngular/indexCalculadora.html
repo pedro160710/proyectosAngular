@@ -14,32 +14,33 @@
 			<table>
 				<tr> 
 				<td colspan="5"><input type="text" name="valores" id="valores" ng-model="display" ></td>
+				<td>{{display}}</td>
 				</tr>
 				<tr>
 					<td><button type="button" ng-click="retornar(7)">7</button></td>	
 					<td><button type="button" ng-click="retornar(8)">8</button></td>
 					<td><button type="button" ng-click="retornar(9)">9</button></td>
-					<td><button type="button" ng-click="calcular('+')">+</button></td>
-					<td><button type="button" ng-click="calcular('-')">-</button></td>
+					<td><button type="button" ng-click="getSigno('+')">+</button></td>
+					<td><button type="button" ng-click="getSigno('-')">-</button></td>
 				</tr>
 				<tr>
 					<td><button type="button"  ng-click="retornar(4)">4</button></td>	
 					<td><button type="button"  ng-click="retornar(5)">5</button></td>
 					<td><button type="button"  ng-click="retornar(6)">6</button></td>
-					<td><button type="button"  ng-click="calcular('*')">*</button></td>
-					<td><button type="button"  ng-click="calcular('/')">/</button></td>
+					<td><button type="button"  ng-click="getSigno('*')">*</button></td>
+					<td><button type="button"  ng-click="getSigno('/')">/</button></td>
 				</tr>
 				<tr>
 					<td><button type="button"  ng-click="retornar(1)">1</button></td>	
 					<td><button type="button"  ng-click="retornar(2)">2</button></td>
 					<td><button type="button"  ng-click="retornar(3)">3</button></td>
 					<td><button type="button"  ng-click="eliminarUltimo()"><-</button></td>
-					<td><button type="button"  ng-click="borrarPantalla()">C</button></td>
+					<td><button type="button"  ng-click="limpiarPantalla()">C</button></td>
 				</tr>
 				<tr>
 					<td colspan="2"><button type="button" ng-click="retornar(0)">0</button></td>
 					<td></td>
-					<td colspan="2"><button type="button" ng-click="resultado()">=</button></td>
+					<td colspan="2"><button type="button" ng-click="calcularR()">=</button></td>
 				</tr>
 			</table>
 			</form>

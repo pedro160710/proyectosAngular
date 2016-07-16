@@ -14,7 +14,7 @@ app.controller("CalculatorController",function($scope){
 		$scope.operation= 0;
 		$scope.memory = null;
 		$scope.displayValue= 0;
-		$scope.result=0;
+		$scope.result="yooo";
 	};
 	$scope.onClicSum= function(){
 		$scope.saveMemory();

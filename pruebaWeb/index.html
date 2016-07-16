@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="appBusquedaLibro">
+	<head>
+		<title>busqueda</title>
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</head>
+	<body  ng-controller="appController">
+		<nav>
+			
+		</nav>
+		<section>
+			<div>
+			{{8+5}}
+
+			<input type="text" name="txtBusqueda" ng-model="txtBusquedaModel">
+			{{txtBusquedaModel | uppercase }}
+			{{txtBusquedaModel | lowercase}}
+			<button ng-click="buscarLibro(txtBusquedaModel)">Buscar por titulo</button>
+			</div>
+			<div >
+			<table>
+				<tr>
+					<th>id</th>
+					<th>Titulo</th>
+					<th>Autor</th>
+					<th>Editar</th>
+				</tr>
+				<!-- <tr ng-repeat="libro in librosEncontrados | filter:txtBusquedaModel"> -->
+				<tr ng-repeat="libro in libros | filter:txtBusquedaModel | orderBy: 'titulo'">
+					<td>{{libro.id}}</td>
+					<td>{{libro.titulo}}</td>
+					<td>{{libro.autor}}</td>
+					<td><button ng-click="editarLibro({{libro.id}})">Editar</button></td>
+				</tr>
+			</table>
+
+			</div>
+		</section>
+
+	</body>
+</html>
