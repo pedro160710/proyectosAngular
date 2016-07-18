@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="appFiltros">
+<head>
+	<meta charset="UTF-8">
+	<title>filtros en angular</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<body ng-controller="filCtrl">
+	<h1>FILTROS ANGULAR</h1>
+	<h2>filter</h2>
+	<label> Todo: <input ng-model="buscar.$"></label> <br>
+	<label> Nombre: <input ng-model="buscar.nombre"></label><br>
+	<label> Telefono: <input ng-model="buscar.telefono"></label>
+	<table>
+		<tr ng-repeat="objeto in friends | filter:buscar">
+			<td>{{objeto.nombre}}</td>
+			<td>{{objeto.telefono}}</td>
+		</tr>
+	</table>
+	<h2>currency</h2>
+	<table>
+		<tr>
+			<th>valor original</th>
+			<th>valor con formato</th>
+		</tr>
+		<tr>
+			<td>{{moneda}}</td>
+			<td><p>{{moneda | currency : '@'}}</p></td>	
+		</tr>
+
+	</table>
+	<!-- number convierte un numero en string con formato -->
+	<h2>number</h2>
+	<table>
+		<tr>
+			<th>valor original</th>
+			<th>valor con formato</th>
+		</tr>
+		<tr>
+			<td>{{numero}}</td>
+			<td>{{numero | number}}</td>
+		</tr>
+	</table>
+	
+	<h2>date</h2>
+	<table>
+		<tr>
+			<th>valor original</th>
+			<th>valor con formato</th>
+		</tr>
+		<tr>
+			<td>{{fecha}}</td>
+			<td>{{fecha | date}}</td>
+		</tr>
+	</table>	
+	<h2>json</h2>
+	<table>
+		<tr>
+			<th>valor original</th>
+			<th>valor con formato</th>
+		</tr>
+		<tr>
+			<td>{{friends[0]}}</td>
+			<td>{{friends[0].nombre | json}}</td>
+		</tr>
+	</table>	
+	<h2>lowercase</h2>
+	<table>
+		<tr>
+			<th>valor original</th>
+			<th>valor con formato</th>
+		</tr>
+		<tr>
+			<td>{{string}}</td>
+			<td>{{string| lowercase}}</td>
+		</tr>
+	</table>	
+	<h2>uppercase</h2>
+	<table>
+		<tr>
+			<th>valor original</th>
+			<th>valor con formato</th>
+		</tr>
+		<tr>
+			<td>{{string}}</td>
+			<td>{{string | uppercase}}</td>
+		</tr>
+	</table>	
+	<h2>limitTo</h2>
+	<table>
+		<tr>
+			<th>valor original</th>
+			<th>valor con formato</th>
+		</tr>
+		<tr>
+			<td>{{string}}</td>
+			<td>{{string | limitTo:4}}</td>
+			{{6 | filtroPrimo}}
+		</tr>
+	</table>	
+	<h2>orderBy</h2>
+	<table>
+		<label> Buscar: <input ng-model="buscar.$"></label>
+		<tr>
+			<th>valor original</th>
+			<th>valor con formato</th>
+		</tr>
+		<tr ng-repeat="objeto in friends | filter:buscar |orderBy:'telefono'">
+			<td>{{objeto.nombre}}</td>
+			<td>{{objeto.telefono}}</td>
+		</tr>
+	</table>
+	<h2>Filtro personalizado: evalúa si un número es primo o no y retorna true o false</h2>
+	<table>
+		<tr>
+			<th>valor original</th>
+			<th>valor con formato</th>
+		</tr>
+		<tr >
+			<td>
+				<ul>
+					<li>primo: {{numeroPrimo}}</li>
+					<li>par: {{numeroPar}}</li>
+					<li>impar: {{numeroImpar}}</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>primo?: {{numeroPrimo | filtroPrimo}}</li>
+					<li>primo?: {{numeroPar | filtroPrimo}}</li>
+					<li>primo?: {{numeroImpar | filtroPrimo}}</li>
+				</ul>
+
+			</td>
+		</tr>
+	</table>
+	
+
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

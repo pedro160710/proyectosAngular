@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html ng-app="appBusquedaLibro">
-	<head>
-		<title>busqueda</title>
-		<script type="text/javascript" src="angular.min.js"></script>
-		<script type="text/javascript" src="app.js"></script>
-	</head>
-	<body  ng-controller="appController">
-		<nav>
-			
-		</nav>
-		<section>
-			<div>
-			{{8+5}}
-
-			<input type="text" name="txtBusqueda" ng-model="txtBusquedaModel">
-			{{txtBusquedaModel | uppercase }}
-			{{txtBusquedaModel | lowercase}}
+<html lang="es" ng-app="appBusquedaLibro">
+<head>
+	<title>busqueda</title>
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+</head>
+<body  ng-controller="appController">
+	<nav>
+	</nav>
+	<section>
+		<div>
+			<label for="txtBusqueda">Titulo</label>
+			<input type="text" id ="txtBusqueda" name="txtBusqueda" ng-model="txtBusquedaModel" placeholder="ingrese el texto de busqueda">
 			<button ng-click="buscarLibro(txtBusquedaModel)">Buscar por titulo</button>
-			</div>
-			<div >
+		</div>
+		<div >
 			<table>
 				<tr>
 					<th>id</th>
@@ -34,9 +30,7 @@
 					<td><button ng-click="editarLibro({{libro.id}})">Editar</button></td>
 				</tr>
 			</table>
-
-			</div>
-		</section>
-
-	</body>
+		</div>
+	</section>
+</body>
 </html>
