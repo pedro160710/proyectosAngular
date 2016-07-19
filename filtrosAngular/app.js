@@ -10,6 +10,7 @@ app.controller('filCtrl', function($scope){
 	$scope.moneda=465;
 	$scope.numero=123456;
 	$scope.fecha = "2016-12-10";
+	// $scope.fecha = "2016-12-10";
 	$scope.string="Esto Es un String";
 	$scope.numeroPrimo=7;
 	$scope.numeroPar =6;
