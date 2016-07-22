@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="miApp" lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>practicHtml</title>
+
+</head>
+<body ng-controller="people">
+{{8+5}}
+	<div>
+		<ul>
+			<h2>Nombre y edad de programadores en el area local</h2>
+			<li ng-repeat="person in persons">
+			
+				<!-- {{person.Name +' : '+person.Age}} -->
+
+			
+			</li>
+		</ul>
+	</div>
+
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+
+</body>
+</html>
