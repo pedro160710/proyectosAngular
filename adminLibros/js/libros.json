@@ -1,0 +1,74 @@
+{
+	'libros'=[{
+		id:1,
+		titulo:'Harry Potter',
+		autor:'JK Rowling',
+		stock:45,
+		email:'row@asd.com'
+		},
+		{
+		id:2,
+		titulo:'La odisea ',
+		autor:'Homero',
+		stock:45,
+		email:'row@asd.com'
+		},
+		{
+		id:3,
+		titulo:'Cien años de soledad ',
+		autor:'no se',
+		stock:17,
+		email:'asdfa@asd.com'
+		},
+		{
+		id:4,
+		titulo:'El principito',
+		autor:'unknow',
+		stock:78,
+		email:'kjhkj@asd.com'
+		},
+		{
+		id:5,
+		titulo:'La Iliadad',
+		autor:'Homero',
+		stock:79,
+		email:'rlkjw@asd.com'
+		},
+		{
+		id:6,
+		titulo:'El alquimista',
+		autor:'Paulo cohelo',
+		stock:40,
+		email:'paul@asd.com'
+		},
+		{
+		id:7,
+		titulo:'El horla',
+		autor:'guy de maupassant',
+		stock:5,
+		email:'guy@asd.com'
+		},
+		{
+		id:8,
+		titulo:'El libro de la selva',
+		autor:'guy de maupassant',
+		stock:35,
+		email:'guy@asd.com'
+		},
+		{
+		id:9,
+		titulo:'Brida',
+		autor:'Paulo',
+		stock:1,
+		email:'aaaaa@asd.com'
+		},
+		{
+		id:10,
+		titulo:'Brida',
+		autor:'Paulo',
+		stock:1,
+		email:'aaaaa@asd.com'
+		}
+
+		]
+}
