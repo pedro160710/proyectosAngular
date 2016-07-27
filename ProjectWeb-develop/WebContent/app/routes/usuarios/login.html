@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <legend>Login</legend>
+                <form name="frmLogin" class="form-horizontal" ng-submit="loginUsuario()">
+                    <div class="form-group">
+                        <label for="username" class="col-lg-2 control-label">Username</label>
+                        <div class="col-lg-10">
+                            <input ng-model="datosLoginUsuario.username" type="text" name="username" class="form-control" placeholder="Username" required>
+                            <div class="alert alert-danger" role="alert" ng-show="frmLogin.username.$touched && frmLogin.username.$error.required">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                              Campo Username es requerido
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-lg-2 control-label">Password</label>
+                        <div class="col-lg-10">
+                            <input ng-model="datosLoginUsuario.password" type="password" name="password" class="form-control" placeholder="Password" required>
+                            <div class="alert alert-danger" role="alert" ng-show="frmLogin.password.$touched && frmLogin.password.$error.required">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                              Campo Password es requerido
+                            </div>
+                        </div>
+                    </div>                                     
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="!frmLogin.$valid">Ingresar</button>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</div>
+
+

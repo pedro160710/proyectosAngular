@@ -1,0 +1,97 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+				<h3>Clientes</h3>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+ 	<div class="row">
+		<div class="col-md-3"></div>            	
+		<div class="col-md-6">
+			<form class="form-inline text-center" role="form" ng-submit="buscarClientePorNombre()">
+				<input type="text" class="form-control" placeholder="Buscar por nombre..." ng-model="nombreClienteBusqueda">
+				<button type="submit" class="btn btn-primary glyphicon glyphicon-search" data-toggle="tooltip" data-placement="bottom" title="Buscar" data-original-title="Buscar"></button>
+			</form>
+		</div>
+        <div class="col-md-3"></div>
+	</div>
+</div>
+
+<div class="container">
+ 	<div class="row">
+		<div class="col-md-3"></div>            	
+		<div class="col-md-6 text-center">
+			<a class="btn btn-success glyphicon glyphicon-plus-sign" href="#/crearCliente" role="button" data-toggle="tooltip" data-placement="bottom" title="Crear Cliente" data-original-title="Crear Cliente"></a>
+			<a class="btn btn-success glyphicon glyphicon glyphicon-list-alt" ng-click="obtenerReporte()" role="button" data-toggle="tooltip" data-placement="bottom" title="Generar Reporte" data-original-title="Generar Reporte"></a>
+		</div>
+        <div class="col-md-3"></div>
+	</div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                
+
+				<div class = "table-responsive">
+				   <table class = "table">      
+				      <thead>
+				         <tr>
+				            <th>Cedula</th>
+				            <th>Nombre</th>
+				            <th>Razon social</th>
+				            <th>Direccion</th>
+				            <th>Telefono</th>
+				            <th>Movil</th>
+				            <th>Correo</th>
+				            <th>Editar</th>
+				            <th>Eliminar</th>
+				         </tr>
+				      </thead>
+				      
+				      <tbody ng-repeat="cliente in listaClientes | orderBy:cliente.cliNombre">
+				         <tr>
+				            <td>{{cliente.cliCedula}}</td>
+				            <td>{{cliente.cliNombre}}</td>
+				            <td>{{cliente.cliRazonSocial}}</td>
+				            <td>{{cliente.cliDireccion}}</td>
+				            <td>{{cliente.cliTelefono}}</td>
+				            <td>{{cliente.cliMovil}}</td>
+				            <td>{{cliente.cliCorreo}}</td>
+				            <td><a class="btn btn-warning" href="#/editarCliente/{{cliente.idCliente}}" role="button">Editar</a></td>
+				            <td><a class="btn btn-danger" ng-click="abrirModalEliminarCliente(cliente)" role="button">Eliminar</a></td>
+				         </tr>
+				      </tbody>
+				      
+				   </table>
+				</div> 
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>
+
+<!-- ELIMINAR CLIENTE -->
+<script type="text/ng-template" id="modalEliminarCliente.html">
+	<div class="modal-header">
+		<h3 class="modal-title">Eliminar Cliente</h3>
+	</div>
+	<div class="modal-body">
+		<p>
+			Desea eliminar el cliente {{nombreCliente}}?
+		</p>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-default" type="button" ng-click="cancelarEliminarCliente()">Cancelar</button>
+		<button class="btn btn-primary" type="button" ng-click="confirmarEliminarCliente()">Eliminar</button>
+	</div>
+</script>

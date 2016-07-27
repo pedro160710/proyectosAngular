@@ -4,7 +4,13 @@ app.controller('miControlador', function($scope,adminLibroSrv){
 
 // aqui llamar lasfunciones que se van a invocar como callback en el metodo then
 	$scope.buscarLibro = function(){
-			adminLibroSrv.buscarLibro();
+			adminLibroSrv.buscarLibro($scope.valorDeBusqueda, 
+					function(librosEncontrados){
+				console.log("libros escontrados"+librosEncontrados);
+				$scope.libros= response;
+			}, function(mensajeError){
+				$scope.error= mensajeError;
+			});
 	};
 
 

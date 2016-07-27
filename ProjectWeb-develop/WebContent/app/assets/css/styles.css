@@ -1,0 +1,10 @@
+.widgetstyle {
+    overflow-y: auto; 
+    width: auto; 
+    height: 300px;
+}
+
+.center {
+    margin: 0 auto;
+    width: 80%;
+}

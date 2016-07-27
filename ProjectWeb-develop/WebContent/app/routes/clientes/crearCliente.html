@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <legend>Crear Cliente</legend>
+                <form name="frmCrearCliente" class="form-horizontal" ng-submit="crearCliente()">
+                    <div class='form-group'>
+                        <label for="cedula" class="col-lg-2 control-label">Cedula</label>
+                        <div class="col-lg-10">
+                            <input ng-model="nuevoCliente.cedula" type="number" name="cedula" class="form-control" placeholder="Ej. 0123456789" required autofocus ng-minlength="10" ng-maxlength="10">
+                            <div class="alert alert-danger" role="alert" ng-show="!frmCrearCliente.$pristine && (frmCrearCliente.cedula.$error.minlength || frmCrearCliente.cedula.$error.maxlength)">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                              Ingrese una cedula valida
+                            </div>
+                            <div class="alert alert-danger" role="alert" ng-show="!frmCrearCliente.$pristine && frmCrearCliente.cedula.$error.required">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                              Campo Cedula es requerido
+                            </div>
+                        </div>                       
+                    </div>
+                	<div class='form-group'>
+                        <label for="nombre" class="col-lg-2 control-label">Nombre</label>
+                        <div class="col-lg-10">
+                            <input ng-model="nuevoCliente.nombre" type="text" name="nombre" class="form-control" placeholder="Ej. Juan Perez " required >
+                            <div class="alert alert-danger" role="alert" ng-show="frmCrearCliente.nombre.$touched && frmCrearCliente.nombre.$error.required">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                              Campo Nombre es requerido
+                            </div>
+                        </div>                       
+                    </div>
+                    <div class='form-group'>
+                        <label for="razonSocial" class="col-lg-2 control-label">Razon Social</label>
+                        <div class="col-lg-10">
+                            <input ng-model="nuevoCliente.razonSocial" type="text" name="razonSocial" class="form-control" placeholder="Ej. Bebidas S.A." required >
+                            <div class="alert alert-danger" role="alert" ng-show="frmCrearCliente.razonSocial.$touched && frmCrearCliente.razonSocial.$error.required">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                              Campo Razon Social es requerido
+                            </div>
+                        </div>                       
+                    </div>
+                    <div class='form-group'>
+                        <label for="direccion" class="col-lg-2 control-label">Direccion</label>
+                        <div class="col-lg-10">
+                            <input ng-model="nuevoCliente.direccion" type="text" name="direccion" class="form-control" placeholder="Ej. Av. 6 de Diciembre y Los Pinos" required >
+                            <div class="alert alert-danger" role="alert" ng-show="frmCrearCliente.direccion.$touched && frmCrearCliente.direccion.$error.required">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                              Campo Direccion es requerido
+                            </div>
+                        </div>                      
+                    </div>
+                    <div class='form-group'>
+                        <label for="telefono" class="col-lg-2 control-label">Telefono</label>
+                        <div class="col-lg-10">
+                            <input ng-model="nuevoCliente.telefono" type="text" name="telefono" class="form-control" placeholder="Ej. 2555000">
+                        </div>                       
+                    </div>
+                    <div class='form-group'>
+                        <label for="movil" class="col-lg-2 control-label">Movil</label>
+                        <div class="col-lg-10">
+                            <input ng-model="nuevoCliente.movil" type="text" name="movil" class="form-control" placeholder="Ej. 0911111111">
+                        </div>                       
+                    </div>
+                    <div class='form-group'>
+                        <label for="email" class="col-lg-2 control-label">Email</label>
+                        <div class="col-lg-10">
+                            <input ng-model="nuevoCliente.correo" type="email" name="email" class="form-control" placeholder="Ej. example@email.com" required > 
+                            <div class="alert alert-danger" role="alert" ng-show="!frmCrearCliente.$pristine && frmCrearCliente.email.$error.email">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>Ingrese un email valido                       
+                            </div>
+                            <div class="alert alert-danger" role="alert" ng-show="frmCrearCliente.email.$touched && frmCrearCliente.email.$error.required">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>Campo Email es requerido                      
+                            </div>
+                        </div>     
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="!frmCrearCliente.$valid">Crear</button>
+                </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</div>
