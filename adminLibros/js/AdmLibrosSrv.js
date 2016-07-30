@@ -14,16 +14,11 @@ app.service("adminLibroSrv",function($http){
 			);
 		console.log('funcion buscar Libro**');
 	};
-
+		
 // metodo  editarLibro
 	this.actualizarLibro= function(libro, exito, error){
-		$http({
-			method:'POST',
-			url:"http://localhost:8080/CrudRestWeb1/rest/crudLibroRest/actualizarLibro",
-			data: libro,
-			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-			}).then(
-
+		$http.post("http://localhost:8080/CrudRestWeb1/rest/crudLibroRest/actualizarLibro",libro)
+		.then(
 				function(response){
 					console.log("libro actualizado"+response.data);
 					exito(response.data);
@@ -35,6 +30,5 @@ app.service("adminLibroSrv",function($http){
 		
 		
 	};
-
 
 });
